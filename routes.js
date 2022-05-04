@@ -2,9 +2,9 @@ const express = require('express');
 
 const routes = express.Router();
 
-// routes.post('/');
-// routes.get('/');
-// routes.get('/:id');
-// routes.delete('/me');
+routes.post();
+routes.get();
+routes.put();
+routes.delete();
 
 module.exports = routes;
