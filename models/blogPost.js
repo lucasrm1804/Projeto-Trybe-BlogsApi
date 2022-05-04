@@ -22,4 +22,4 @@ class BlogPost extends Model {
   }
 }
 
-module.exports = BlogPost;
+module.exports = BlogPost; 

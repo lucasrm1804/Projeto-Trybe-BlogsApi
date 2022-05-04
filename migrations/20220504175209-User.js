@@ -1,3 +1,4 @@
+
 'use strict';
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
         allowNull: false,
       },
       email: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true,
       },
@@ -26,7 +27,8 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       }
-    });
+    }
+    );
   },
 
   down: async (queryInterface, Sequelize) => {

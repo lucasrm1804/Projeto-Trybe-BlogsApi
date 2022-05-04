@@ -10,7 +10,7 @@ class Category extends Model {
   }
 
   static associate(models) {
-    this.belongsToMany(models.Category, {
+    this.belongsToMany(models.BlogPost, {
       foreignKey: 'categoryId',
       through: 'PostCategories',
       as: 'posts',
@@ -18,4 +18,4 @@ class Category extends Model {
   }
 }
 
-module.exports = Category;
+module.exports = Category; 
