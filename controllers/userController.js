@@ -7,7 +7,7 @@ const addUser = async (request, response) => {
     response.status(201).json({ token });
   } catch (error) {
     console.log(error);
-    response.status(409).json({ error: error.message });
+    response.status(409).json({ message: error.message });
   }
 };
 
