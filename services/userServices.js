@@ -17,6 +17,18 @@ async function addUser(displayName, email, password, image) {
   return generateToken({ id: user.id });
 }
 
+async function login(email, password) {
+  const user = await User.findOne({ where: { email } });
+  if (!user) {
+    throw new Error('Invalid fields');
+  }
+  if (user.password !== password) {
+    throw new Error('Invalid fields');
+  }
+  return generateToken({ id: user.id });
+}
+
 module.exports = {
   addUser,
+  login,
 }; 

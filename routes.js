@@ -5,5 +5,6 @@ const { validateName, validatePassword, validateEmail } = require('./middlewares
 const routes = express.Router();
 
 routes.post('/user', validateName, validatePassword, validateEmail, userController.addUser);
+routes.post('/login', validatePassword, validateEmail, userController.login);
 
 module.exports = routes;

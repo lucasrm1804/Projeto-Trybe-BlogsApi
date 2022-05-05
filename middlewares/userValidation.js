@@ -3,8 +3,12 @@ const regex = /\S+@\S+\.\w{2,3}/;
 function validateEmail(request, response, next) {
   const { email } = request.body;
 
-  if (!email) {
+  if (email === undefined) {
     return response.status(400).json({ message: '"email" is required' });
+  }
+
+  if (email === '') {
+    return response.status(400).json({ message: '"email" is not allowed to be empty' });
   }
 
   if (!regex.test(email)) {
@@ -17,8 +21,12 @@ function validateEmail(request, response, next) {
 function validatePassword(request, response, next) {
   const { password } = request.body;
 
-  if (!password) {
+  if (password === undefined) {
     return response.status(400).json({ message: '"password" is required' });
+  }
+
+  if (password === '') {
+    return response.status(400).json({ message: '"password" is not allowed to be empty' });
   }
 
   if (password.length < 6) {
