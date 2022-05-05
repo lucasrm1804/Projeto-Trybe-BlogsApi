@@ -35,6 +35,9 @@ async function getAll() {
 
 async function getById(id) {
   const user = await User.findByPk(id);
+  if (!user) {
+    throw new Error('User does not exist');
+  }
   return user;
 }
 

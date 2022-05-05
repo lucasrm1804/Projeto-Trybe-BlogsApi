@@ -33,8 +33,9 @@ async function getById(request, response) {
   const { id } = request.params;
   try {
     const user = await userServices.getById(id);
+    response.status(200).json(user);
   } catch (error) {
-    
+    response.status(404).json({ message: error.message });
   }
 }
 
