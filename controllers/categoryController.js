@@ -5,7 +5,15 @@ async function createCategory(request, response) {
   try {
     const category = await categoryServices.createCategory(name);
     response.status(201).json(category);
-    console.log(category);
+  } catch (error) {
+    response.status(400).json({ message: error.message });
+  }
+}
+
+async function getAllCategories(request, response) {
+  try {
+    const categories = await categoryServices.getAllCategories();
+    response.status(200).json(categories);
   } catch (error) {
     response.status(400).json({ message: error.message });
   }
@@ -13,4 +21,5 @@ async function createCategory(request, response) {
 
 module.exports = {
   createCategory,
+  getAllCategories,
 };

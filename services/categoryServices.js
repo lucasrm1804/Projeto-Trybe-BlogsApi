@@ -1,4 +1,4 @@
-const Category = require('../models/Category');
+const Category = require('../models/category');
 
 async function createCategory(name) {
   if (!name) {
@@ -8,6 +8,12 @@ async function createCategory(name) {
   return category;
 }
 
+async function getAllCategories() {
+  const categories = await Category.findAll();
+  return categories;
+}
+
 module.exports = {
   createCategory,
+  getAllCategories,
 };

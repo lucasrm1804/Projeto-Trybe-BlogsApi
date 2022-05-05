@@ -12,7 +12,7 @@ class Category extends Model {
   static associate(models) {
     this.belongsToMany(models.BlogPost, {
       foreignKey: 'categoryId',
-      through: 'PostCategories',
+      through: 'PostsCategories',
       as: 'posts',
     });
   }

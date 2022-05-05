@@ -4,7 +4,7 @@ const conection = new Sequelize(Config.development);
 
 const User = require('../models/user');
 const BlogPost = require('../models/blogPost');
-const Category = require('../models/Category');
+const Category = require('../models/category');
 
 BlogPost.init(conection);
 User.init(conection);

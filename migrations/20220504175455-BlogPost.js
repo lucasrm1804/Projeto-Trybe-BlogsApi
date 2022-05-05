@@ -26,14 +26,14 @@ module.exports = {
       published: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.NOW,
-        // defaultValue: Sequelize.fn('NOW'),
+        // defaultValue: Sequelize.NOW,
+        defaultValue: Sequelize.fn('NOW'),
       },
       updated: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.NOW,
-        // defaultValue: Sequelize.fn('NOW'),
+        // defaultValue: Sequelize.NOW,
+        defaultValue: Sequelize.fn('NOW'),
       }
     });
   },

@@ -16,7 +16,7 @@ class BlogPost extends Model {
     this.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
     this.belongsToMany(models.Category, {
       foreignKey: 'postId',
-      through: 'PostCategories',
+      through: 'PostsCategories',
       as: 'categories',
     });
   }
