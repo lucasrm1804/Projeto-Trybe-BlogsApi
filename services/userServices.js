@@ -28,7 +28,19 @@ async function login(email, password) {
   return generateToken({ id: user.id });
 }
 
+async function getAll() {
+  const users = await User.findAll();
+  return users;
+}
+
+async function getById(id) {
+  const user = await User.findByPk(id);
+  return user;
+}
+
 module.exports = {
   addUser,
   login,
+  getAll,
+  getById,
 }; 

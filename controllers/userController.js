@@ -20,7 +20,27 @@ async function login(request, response) {
   }
 }
 
+async function getAll(request, response) {
+  try {
+    const users = await userServices.getAll();
+    response.status(200).json(users);
+  } catch (error) {
+    response.status(400).json({ message: error.message });
+  }
+}
+
+async function getById(request, response) {
+  const { id } = request.params;
+  try {
+    const user = await userServices.getById(id);
+  } catch (error) {
+    
+  }
+}
+
 module.exports = {
   addUser,
   login,
+  getAll,
+  getById,
 };
