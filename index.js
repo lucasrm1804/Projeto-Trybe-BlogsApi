@@ -8,8 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(routes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Escutando na porta ${process.env.PORT}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Escutando na porta ${PORT}`);
 });
 
 // não remova esse endpoint, e para o avaliador funcionar
